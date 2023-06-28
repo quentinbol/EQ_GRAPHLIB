@@ -1,8 +1,15 @@
+/*
+** EPITECH PROJECT, 2023
+** Main
+** File description:
+** Lib
+*/
+
 #include "all.hpp"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Black Window SFML");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Black Window SFML");
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
