@@ -19,6 +19,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -g -lsfml-graphics -lsfml-window -lsfml-system
+	rm -f $(OBJ)
 	@echo -e "\033[1;32m[$(NAME)]: Compiled !\033[0m"
 	@echo -e "\033[1;32mCompiled $(shell echo "$?" | wc -w) file(s)\033[0m"
 
