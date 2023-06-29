@@ -8,8 +8,11 @@
 NAME = EQ_Graphlib
 
 SRC += main.cpp
+SRC += Create_Form/create_circle.cpp
 
 CFLAGS = -I./include -W -Wextra -Wall -Werror
+
+GRAPHLIB = -lsfml-graphics -lsfml-window -lsfml-system
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,8 +21,7 @@ CC = g++
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -g -lsfml-graphics -lsfml-window -lsfml-system
-	rm -f $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -g $(GRAPHLIB)
 	@echo -e "\033[1;32m[$(NAME)]: Compiled !\033[0m"
 	@echo -e "\033[1;32mCompiled $(shell echo "$?" | wc -w) file(s)\033[0m"
 
