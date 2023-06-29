@@ -7,6 +7,11 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <string.h>
+#include <assert.h>
+#include <stdlib.h>
+#include "define.hpp"
+#include "structure.hpp"
 
 #ifndef all_hpp
     #define all_hpp
@@ -17,11 +22,16 @@
      * @param FillColor
      * @param OutlineColor
      * @param OutlineThickness
-     * @param Position
-     * @param Scale
-     * @param 
+     * @param Position_x
+     * @param Position_y
+     * @param Scale_x
+     * @param Scale_y
+     * @param Origin
+     * @param Rotation
+     * @param Texture
+     * @param Texture_Rect
      */
-    void create_circle(std::string property[10]);
+    sf::CircleShape create_circle(std::string property[10]);
 
 
 #endif /* !all_hpp */
