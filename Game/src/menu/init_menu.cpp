@@ -7,27 +7,7 @@
 
 #include "all.h"
 
-void init_sprite_05(all_t *all)
-{
-    return;
-}
-
-void init_sprite_04(all_t *all)
-{
-    return;
-}
-
-void init_sprite_03(all_t *all)
-{
-    return;
-}
-
-void init_sprite_02(all_t *all)
-{
-    return;
-}
-
-void init_sprite_01(all_t *all)
+void init_menu(all_t *all)
 {
     all->menu.font.loadFromFile("assets/font.ttf");
 

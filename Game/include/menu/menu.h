@@ -8,6 +8,8 @@
 #ifndef menu_h
     #define menu_h
 
+    #include <iostream>
+
     struct menu_t {
         sf::Font font;
 
@@ -22,6 +24,11 @@
         sf::Texture b_opt_t;
         sf::Text b_opt_f;
     };
+
+    struct all_t;
+    void init_menu(all_t *all);
+    void event_menu(all_t *all);
+    void menu_display(all_t *all);
 
 
 #endif /* !menu _h*/

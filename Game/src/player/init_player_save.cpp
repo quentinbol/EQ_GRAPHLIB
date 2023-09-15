@@ -63,13 +63,13 @@ void charge_save(all_t *all)
         nb++;
     }
 
-    all->player.setPos(stoi(let[0]), stoi(let[1]), stoi(let[2]));
-    all->player.setPerso(let[3], let[4][0], stoi(let[5]));
-    all->player.setGold(stoi(let[6]), stoi(let[7]), stoi(let[8]));
-    all->player.setLife(stoi(let[9]), stoi(let[10]), stoi(let[11]));
-    all->player.setMove(stoi(let[12]), stoi(let[13]), stoi(let[14]));
-    all->player.setPower1(stoi(let[15]), stoi(let[16]), stoi(let[17]));
-    all->player.setPower2(stoi(let[18]), stoi(let[19]));
+    all->playstat.setPos(stoi(let[0]), stoi(let[1]), stoi(let[2]));
+    all->playstat.setPerso(let[3], let[4][0], stoi(let[5]));
+    all->playstat.setGold(stoi(let[6]), stoi(let[7]), stoi(let[8]));
+    all->playstat.setLife(stoi(let[9]), stoi(let[10]), stoi(let[11]));
+    all->playstat.setMove(stoi(let[12]), stoi(let[13]), stoi(let[14]));
+    all->playstat.setPower1(stoi(let[15]), stoi(let[16]), stoi(let[17]));
+    all->playstat.setPower2(stoi(let[18]), stoi(let[19]));
 }
 
 void create_save(all_t *all)
@@ -84,7 +84,7 @@ void create_save(all_t *all)
     f << copy;
 }
 
-void init_player(all_t *all)
+void init_player_save(all_t *all)
 {
     int fd = open(".lock/save/save_player.txt", O_WRONLY);
 

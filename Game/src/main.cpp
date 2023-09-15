@@ -9,8 +9,9 @@
 
 void init_all(all_t *all)
 {
-    init_player(all);
-    init_sprite_01(all);
+    init_player_save(all);
+    init_create_new_player(all);
+    init_menu(all);
 }
 
 void my_game(all_t *all)
@@ -38,6 +39,8 @@ void my_game(all_t *all)
 int main()
 {
     all_t all;
+
+    all.index = 0;
 
     init_all(&all);
     my_game(&all);

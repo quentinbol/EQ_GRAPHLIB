@@ -1,13 +1,13 @@
 /*
 ** EPITECH PROJECT, 2023
-** display
+** create_player
 ** File description:
 ** true
 */
 
 #include "all.h"
 
-void the_display(all_t *all)
+void new_player(all_t *all)
 {
-    menu_display(all);    
+    std::cout << "true\n";
 }

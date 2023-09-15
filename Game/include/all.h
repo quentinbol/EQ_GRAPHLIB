@@ -24,23 +24,26 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "lib_graphic/lib_graphic.h"
-#include "initialization/init.h"
 #include "player/player.h"
 #include "menu/menu.h"
+#include "utils.h"
 
 #ifndef all_h
     #define all_h
 
     struct all_t {
+        int index;
         sf::RenderWindow window;
-        player_c player;
+        player_c playstat;
         menu_t menu;
+        player_t player;
     };
 
     struct texture_t {
         sf::Texture texture;
     };
 
+    void init_all(all_t *all);
     void the_game_loop(all_t *all);
     void the_event(all_t *all);
     void the_display(all_t *all);

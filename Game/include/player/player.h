@@ -5,11 +5,8 @@
 ** true
 */
 
-#include <iostream>
-
 #ifndef player_h
     #define player_h
-
 
 class player_c {
 private:
@@ -90,5 +87,15 @@ public:
         return life;
     }
 };
+
+    struct player_t {
+        sf::Sprite player_create_back;
+        sf::Texture player_create_back_t;
+    };
+
+    struct all_t;
+    void init_player_save(all_t *all);
+    void init_create_new_player(all_t *all);
+    void new_player(all_t *all);
 
 #endif /* !player_h */
