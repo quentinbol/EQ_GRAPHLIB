@@ -8,12 +8,22 @@
 NAME = bin
 
 SRC += src/main.cpp
+
 SRC += src/initialization/init_player.cpp
+SRC += src/initialization/init_sprite_0.cpp
+
+SRC += src/game_loop/game_loop.cpp
+
+SRC += src/event/event.cpp
+
+SRC += src/display/display.cpp
+
 SRC += include/lib_graphic/my_get_sprite.cpp
+SRC += include/lib_graphic/my_get_text.cpp
 SRC += include/lib_graphic/create_circle.cpp
 SRC += include/lib_graphic/choose_color.cpp
 
-CFLAGS = -I./include -W -Wextra -Wall #-Werror
+CFLAGS = -I./include #-W -Wextra -Wall -Werror
 
 OBJ = $(SRC:.cpp=.o)
 

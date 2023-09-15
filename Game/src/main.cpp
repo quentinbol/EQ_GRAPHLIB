@@ -10,19 +10,28 @@
 void init_all(all_t *all)
 {
     init_player(all);
+    init_sprite_01(all);
 }
 
 void my_game(all_t *all)
 {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Black Window SFML");
+    all->window.create(sf::VideoMode(1920, 1080), "Black Window SFML");
     sf::Event event;
-    while (window.isOpen()) {
-        while (window.pollEvent(event)) {
+    while (all->window.isOpen()) {
+        all->window.clear();
+        while (all->window.pollEvent(event)) {
+
+            the_event(all);
+
             if (event.type == sf::Event::Closed)
-                window.close();
+                all->window.close();
         }
-        window.clear();
-        window.display();
+
+        the_game_loop(all);
+
+        the_display(all);
+
+        all->window.display();
     }
 }
 
@@ -31,9 +40,7 @@ int main()
     all_t all;
 
     init_all(&all);
-    //my_game(&all);
-
-    std::cout << all.player.getName() << "\n";
+    my_game(&all);
 
     return 0;
 }

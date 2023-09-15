@@ -18,7 +18,8 @@
      * @param Texture
      * @param FilePath
      */
-    sf::Sprite my_get_sprite(sf::Texture& texture, std::string path);
+    sf::Sprite my_get_sprite(sf::Texture& texture, std::string path, sf::Vector2f scale, sf::Vector2f pos);
+    sf::Text my_get_text(sf::Font font, std::string str, sf::Vector2f scale, sf::Vector2f pos);
 
     /**
      * @brief Create a circle object

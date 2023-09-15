@@ -22,20 +22,27 @@
 #include <bits/stdc++.h>
 #include <string>
 #include <iostream>
+#include <SFML/Graphics.hpp>
 #include "lib_graphic/lib_graphic.h"
 #include "initialization/init.h"
 #include "player/player.h"
+#include "menu/menu.h"
 
 #ifndef all_h
     #define all_h
 
     struct all_t {
+        sf::RenderWindow window;
         player_c player;
+        menu_t menu;
     };
 
     struct texture_t {
         sf::Texture texture;
     };
 
+    void the_game_loop(all_t *all);
+    void the_event(all_t *all);
+    void the_display(all_t *all);
 
 #endif /* !all_h */
