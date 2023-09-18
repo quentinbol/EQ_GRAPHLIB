@@ -41,13 +41,11 @@ public:
         pos_x = pos_x_in;
         pos_y = pos_y_in;
     }
-
     void setPerso(std::string name_in, char sex_in, int skin_in) {
         name = name_in;
         sex = sex_in;
         skin = skin_in;
     }
-
     void setGold(int level_in, int points_in, int coins_in) {
         level = level_in;
         points = points_in;
@@ -82,9 +80,28 @@ public:
     int getSkin() {
         return skin;
     }
-
+    int getLevel() {
+        return level;
+    }
+    int getCoins() {
+        return coins;
+    }
+    int getPoints() {
+        return points;
+    }
     int getLife() {
         return life;
+    }
+
+
+    void addCoins(int x) {
+        coins = coins + x;
+    }
+    void addPoints(int x) {
+        points = points + x;
+    }
+    void addLevel(int x) {
+        level = level + x;
     }
 };
 
@@ -96,6 +113,5 @@ public:
     struct all_t;
     void init_player_save(all_t *all);
     void init_create_new_player(all_t *all);
-    void new_player(all_t *all);
 
 #endif /* !player_h */

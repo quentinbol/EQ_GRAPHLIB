@@ -65,7 +65,7 @@ void charge_save(all_t *all)
 
     all->playstat.setPos(stoi(let[0]), stoi(let[1]), stoi(let[2]));
     all->playstat.setPerso(let[3], let[4][0], stoi(let[5]));
-    all->playstat.setGold(stoi(let[6]), stoi(let[7]), stoi(let[8]));
+    all->playstat.setGold(stoi(let[6]), stoi(let[8]), stoi(let[7]));
     all->playstat.setLife(stoi(let[9]), stoi(let[10]), stoi(let[11]));
     all->playstat.setMove(stoi(let[12]), stoi(let[13]), stoi(let[14]));
     all->playstat.setPower1(stoi(let[15]), stoi(let[16]), stoi(let[17]));
@@ -74,6 +74,8 @@ void charge_save(all_t *all)
 
 void create_save(all_t *all)
 {
+    all->menu.save = 0;
+
     std::array<std::string, 20> buff;
     buff = get_player_config(".lock/config/config_player.txt");
     
@@ -86,6 +88,8 @@ void create_save(all_t *all)
 
 void init_player_save(all_t *all)
 {
+    all->menu.save = 1;
+
     int fd = open(".lock/save/save_player.txt", O_WRONLY);
 
     if (fd == -1)

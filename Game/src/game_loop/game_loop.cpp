@@ -9,5 +9,5 @@
 
 void the_game_loop(all_t *all)
 {
-    return;
+    menu_loop(all);
 }

@@ -16,5 +16,6 @@ void prss_event(all_t *all)
 void the_event(all_t *all)
 {
     event_menu(all);
+    prss_event(all);
     //mousse_pos(all);
 }

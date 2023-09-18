@@ -10,4 +10,5 @@
 void new_player(all_t *all)
 {
     std::cout << "true\n";
+    all->playstat.addCoins(100);
 }

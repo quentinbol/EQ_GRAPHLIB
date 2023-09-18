@@ -9,11 +9,12 @@ NAME = bin
 
 SRC += src/main.cpp
 SRC += src/menu/init_menu.cpp
+SRC += src/menu/menu_loop.cpp
 SRC += src/menu/event_menu.cpp
 SRC += src/menu/menu_display.cpp
 SRC += src/player/init_player_save.cpp
 SRC += src/player/init_create_new_player.cpp
-SRC += src/player/create_player.cpp
+SRC += src/menu/create_player.cpp
 SRC += src/game_loop/game_loop.cpp
 SRC += src/event/event.cpp
 SRC += src/display/display.cpp
