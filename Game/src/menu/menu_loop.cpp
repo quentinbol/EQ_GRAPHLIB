@@ -39,6 +39,7 @@ void loop_scene_2(all_t *all)
 
     all->menu.textRect3 = all->menu.name_input.getLocalBounds();
     all->menu.name_input.setOrigin(all->menu.textRect3.width/2,all->menu.textRect3.height/2);
+    all->menu.name_input.setString(all->menu.name_enter);
 }
 
 void menu_loop(all_t *all)

@@ -7,9 +7,19 @@
 
 #include "all.h"
 
+void init_menu_scene_3_1(all_t *all)
+{
+    all->menu.scene_3_right = my_get_sprite(all->menu.scene_3_right_t,
+    "assets/b_right.png", {0.3, 0.3}, {1650, 450});
+    all->menu.scene_3_left = my_get_sprite(all->menu.scene_3_left_t,
+    "assets/b_left.png", {0.3, 0.3}, {70, 450});
+}
+
 void init_menu_scene_3(all_t *all)
 {
     all->menu.name_state = 0;
+    all->menu.f = 0;
+    all->menu.m = 0;
     all->menu.scene_3_b_title = my_get_sprite(all->menu.scene_3_b_title_t,
     "assets/b_title_charge_save.png", {0.4, 0.4}, {760, 130});
 
@@ -47,6 +57,8 @@ void init_menu_scene_3(all_t *all)
     all->menu.name_input.setPosition({930, 160});
     all->menu.name_input.setScale({2, 2});
     all->menu.name_input.setColor(sf::Color::Black);
+
+    init_menu_scene_3_1(all);
 }
 
 void init_menu_scene_2(all_t *all)
@@ -61,7 +73,7 @@ void init_menu_scene_2(all_t *all)
     "assets/b_title_charge_save.png", {0.5, 0.5}, {720, 130});
 
     all->menu.scene_2_b_next = my_get_sprite(all->menu.scene_2_b_next_t,
-    "assets/b_next_charge_save.png", {0.25, 0.25}, {1180, 580});
+    "assets/b_right.png", {0.25, 0.25}, {1180, 580});
 
     all->menu.scene_2_b_create = my_get_sprite(all->menu.scene_2_b_create_t,
     "assets/b_opt.png", {0.5, 0.5}, {720, 820});

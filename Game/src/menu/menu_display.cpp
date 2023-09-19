@@ -24,6 +24,8 @@ void menu_scene_3(all_t *all)
             all->window.draw(all->menu.scene_genre_n);
     
     all->window.draw(all->menu.name_input);
+    all->window.draw(all->menu.scene_3_right);
+    all->window.draw(all->menu.scene_3_left);
 }
 
 void menu_scene_2(all_t *all)

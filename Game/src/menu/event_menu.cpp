@@ -23,8 +23,6 @@ void event_menu_scene_3_name(all_t *all)
             all->menu.name_enter += all->event.text.unicode;
         if (all->event.text.unicode == '\b' && all->menu.name_enter.size() > 0)
             all->menu.name_enter.erase(all->menu.name_enter.size() - 1, 2);
-
-        all->menu.name_input.setString(all->menu.name_enter);
     }
 }
 
@@ -54,6 +52,26 @@ void event_menu_scene_3(all_t *all)
                 all->menu.m = 0;
         }
     }
+
+    if (pos.x > 88 && pos.x < 171 && pos.y > 459 && pos.y < 559) {
+        all->menu.scene_3_left.setScale({0.4, 0.4});
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+            all->index = 1;
+            all->menu.name_enter = "";
+            all->menu.name_state = 0;
+            all->menu.f = 0;
+            all->menu.m = 0;
+        }
+    } else
+        all->menu.scene_3_left.setScale({0.3, 0.3});
+
+    if (pos.x > 1673 && pos.x < 1752 && pos.y > 464 && pos.y < 557) {
+        all->menu.scene_3_right.setScale({0.4, 0.4});
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+            all->index = 3;
+        }
+    } else
+        all->menu.scene_3_right.setScale({0.3, 0.3});
 }
 
 void event_menu_scene_2(all_t *all)

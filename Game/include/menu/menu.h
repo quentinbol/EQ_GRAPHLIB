@@ -58,7 +58,6 @@
 
         sf::Sprite scene_3_genre;
         sf::Texture scene_3_genre_t;
-
         sf::Sprite scene_3_genre_n;
         sf::Texture scene_3_genre_n_t;
 
@@ -77,6 +76,11 @@
         std::string name_enter;
         int name_state;
         sf::FloatRect textRect3;
+
+        sf::Sprite scene_3_right;
+        sf::Texture scene_3_right_t;
+        sf::Sprite scene_3_left;
+        sf::Texture scene_3_left_t;
     };
 
     struct all_t;
