@@ -40,6 +40,9 @@ void loop_scene_2(all_t *all)
     all->menu.textRect3 = all->menu.name_input.getLocalBounds();
     all->menu.name_input.setOrigin(all->menu.textRect3.width/2,all->menu.textRect3.height/2);
     all->menu.name_input.setString(all->menu.name_enter);
+
+    all->menu.result = all->menu.tag_1 + all->menu.tag_2 + all->menu.tag_3
+    + all->menu.tag_4 + all->menu.tag_5;
 }
 
 void menu_loop(all_t *all)

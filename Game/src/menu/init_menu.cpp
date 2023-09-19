@@ -7,6 +7,60 @@
 
 #include "all.h"
 
+void init_menu_scene_4(all_t *all)
+{
+    all->menu.result = 0;
+    all->menu.tag_1 = 0;
+    all->menu.tag_2 = 0;
+    all->menu.tag_3 = 0;
+    all->menu.tag_4 = 0;
+    all->menu.tag_5 = 0;
+
+    all->menu.b_blue_1 = my_get_sprite(all->menu.b_blue_1_t,
+    "assets/b_blue.png", {2.4, 2.4}, {150, 500});
+    all->menu.b_blue_2 = my_get_sprite(all->menu.b_blue_2_t,
+    "assets/b_blue.png", {2.4, 2.4}, {450, 500});
+    all->menu.b_blue_3 = my_get_sprite(all->menu.b_blue_3_t,
+    "assets/b_blue.png", {2.4, 2.4}, {750, 500});
+    all->menu.b_blue_4 = my_get_sprite(all->menu.b_blue_4_t,
+    "assets/b_blue.png", {2.4, 2.4}, {1050, 500});
+    all->menu.b_blue_5 = my_get_sprite(all->menu.b_blue_5_t,
+    "assets/b_blue.png", {2.4, 2.4}, {1350, 500});
+
+    all->menu.b_red_1 = my_get_sprite(all->menu.b_red_1_t,
+    "assets/b_red.png", {2.4, 2.4}, {170, 500});
+    all->menu.b_red_2 = my_get_sprite(all->menu.b_red_2_t,
+    "assets/b_red.png", {2.4, 2.4}, {470, 500});
+    all->menu.b_red_3 = my_get_sprite(all->menu.b_red_3_t,
+    "assets/b_red.png", {2.4, 2.4}, {770, 500});
+    all->menu.b_red_4 = my_get_sprite(all->menu.b_red_4_t,
+    "assets/b_red.png", {2.4, 2.4}, {1070, 500});
+    all->menu.b_red_5 = my_get_sprite(all->menu.b_red_5_t,
+    "assets/b_red.png", {2.4, 2.4}, {1370, 500});
+
+    all->menu.sword = my_get_sprite(all->menu.sword_t,
+    "assets/sword.png", {0.2, 0.2}, {250, 580});
+    all->menu.bow = my_get_sprite(all->menu.bow_t,
+    "assets/bow.png", {0.25, 0.25}, {540, 570});
+    all->menu.shield = my_get_sprite(all->menu.shield_t,
+    "assets/shield.png", {0.5, 0.5}, {850, 580});
+    all->menu.start = my_get_sprite(all->menu.start_t,
+    "assets/start.png", {0.2, 0.2}, {1455, 580});
+    all->menu.wings = my_get_sprite(all->menu.wings_t,
+    "assets/wings.png", {0.3, 0.3}, {1125, 550});
+
+    all->menu.begin = my_get_sprite(all->menu.begin_t,
+    "assets/b_title_charge_save.png", {0.5, 0.5}, {710, 280});
+    all->menu.begreen = my_get_sprite(all->menu.begreen_t,
+    "assets/b_start_green.png", {0.56, 0.56}, {700, 250});
+
+    all->menu.begin_f.setFont(all->menu.font);
+    all->menu.begin_f.setString("Play");
+    all->menu.begin_f.setPosition({850, 280});
+    all->menu.begin_f.setScale({2.5, 2.5});
+    all->menu.begin_f.setColor(sf::Color::Black);
+}
+
 void init_menu_scene_3_1(all_t *all)
 {
     all->menu.scene_3_right = my_get_sprite(all->menu.scene_3_right_t,
@@ -134,4 +188,5 @@ void init_menu(all_t *all)
 
     init_menu_scene_2(all);
     init_menu_scene_3(all);
+    init_menu_scene_4(all);
 }

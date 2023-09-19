@@ -81,6 +81,53 @@
         sf::Texture scene_3_right_t;
         sf::Sprite scene_3_left;
         sf::Texture scene_3_left_t;
+
+
+        sf::Sprite b_blue_1;
+        sf::Texture b_blue_1_t;
+        sf::Sprite b_blue_2;
+        sf::Texture b_blue_2_t;
+        sf::Sprite b_blue_3;
+        sf::Texture b_blue_3_t;
+        sf::Sprite b_blue_4;
+        sf::Texture b_blue_4_t;
+        sf::Sprite b_blue_5;
+        sf::Texture b_blue_5_t;
+
+        int tag_1;
+        int tag_2;
+        int tag_3;
+        int tag_4;
+        int tag_5;
+
+        sf::Sprite b_red_1;
+        sf::Texture b_red_1_t;
+        sf::Sprite b_red_2;
+        sf::Texture b_red_2_t;
+        sf::Sprite b_red_3;
+        sf::Texture b_red_3_t;
+        sf::Sprite b_red_4;
+        sf::Texture b_red_4_t;
+        sf::Sprite b_red_5;
+        sf::Texture b_red_5_t;
+
+        sf::Sprite sword;
+        sf::Texture sword_t;
+        sf::Sprite bow;
+        sf::Texture bow_t;
+        sf::Sprite shield;
+        sf::Texture shield_t;
+        sf::Sprite start;
+        sf::Texture start_t;
+        sf::Sprite wings;
+        sf::Texture wings_t;
+        int result;
+
+        sf::Sprite begin;
+        sf::Texture begin_t;
+        sf::Sprite begreen;
+        sf::Texture begreen_t;
+        sf::Text begin_f;
     };
 
     struct all_t;
