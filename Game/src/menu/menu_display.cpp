@@ -7,6 +7,25 @@
 
 #include "all.h"
 
+void menu_scene_3(all_t *all)
+{
+    all->window.draw(all->menu.scene_2_back);
+    all->window.draw(all->menu.scene_3_b_title);
+    all->window.draw(all->menu.scene_3_name_f);
+    all->window.draw(all->menu.scene_3_male);
+    all->window.draw(all->menu.scene_3_female);
+    if (all->menu.f != 0)
+        all->window.draw(all->menu.scene_3_genre);
+        else
+            all->window.draw(all->menu.scene_3_genre_n);
+    if (all->menu.m != 0)
+        all->window.draw(all->menu.scene_genre);
+        else
+            all->window.draw(all->menu.scene_genre_n);
+    
+    all->window.draw(all->menu.name_input);
+}
+
 void menu_scene_2(all_t *all)
 {
     all->window.draw(all->menu.scene_2_back);
@@ -37,4 +56,5 @@ void menu_display(all_t *all)
 {
     if (all->index == 0) menu_scene_1(all);
     if (all->index == 1) menu_scene_2(all);
+    if (all->index == 2) menu_scene_3(all);
 }

@@ -35,6 +35,7 @@
     struct all_t {
         int index;
         sf::RenderWindow window;
+        sf::Event event;
         player_c playstat;
         menu_t menu;
         player_t player;

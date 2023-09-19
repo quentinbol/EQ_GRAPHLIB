@@ -51,6 +51,32 @@
         sf::Text scene_2_level_f;
         sf::Text scene_2_coins_f;
         sf::Text scene_2_points_f;
+
+        sf::Sprite scene_3_b_title;
+        sf::Texture scene_3_b_title_t;
+        sf::Text scene_3_name_f;
+
+        sf::Sprite scene_3_genre;
+        sf::Texture scene_3_genre_t;
+
+        sf::Sprite scene_3_genre_n;
+        sf::Texture scene_3_genre_n_t;
+
+        sf::Sprite scene_genre;
+        sf::Texture scene_genre_t;
+
+        sf::Sprite scene_genre_n;
+        sf::Texture scene_genre_n_t;
+
+        int m;
+        sf::Text scene_3_male;
+        int f;
+        sf::Text scene_3_female;
+
+        sf::Text name_input;
+        std::string name_enter;
+        int name_state;
+        sf::FloatRect textRect3;
     };
 
     struct all_t;

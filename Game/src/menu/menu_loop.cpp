@@ -36,6 +36,9 @@ void loop_scene_2(all_t *all)
     all->menu.scene_2_points_f.setString(points.str() + " points");
     sf::FloatRect textRect3 = all->menu.scene_2_points_f.getLocalBounds();
     all->menu.scene_2_points_f.setOrigin(textRect3.width,textRect3.height);
+
+    all->menu.textRect3 = all->menu.name_input.getLocalBounds();
+    all->menu.name_input.setOrigin(all->menu.textRect3.width/2,all->menu.textRect3.height/2);
 }
 
 void menu_loop(all_t *all)

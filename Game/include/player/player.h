@@ -112,6 +112,7 @@ public:
 
     struct all_t;
     void init_player_save(all_t *all);
+    void create_save(all_t *all);
     void init_create_new_player(all_t *all);
 
 #endif /* !player_h */

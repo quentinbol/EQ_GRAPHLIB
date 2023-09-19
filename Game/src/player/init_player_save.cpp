@@ -92,10 +92,10 @@ void init_player_save(all_t *all)
 
     int fd = open(".lock/save/save_player.txt", O_WRONLY);
 
-    if (fd == -1)
-        create_save(all);
-
-    charge_save(all);
+    if (fd != -1)
+        charge_save(all);
+        else
+            all->menu.save = 0;
 
     close(fd);
 }

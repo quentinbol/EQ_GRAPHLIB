@@ -17,14 +17,13 @@ void init_all(all_t *all)
 void my_game(all_t *all)
 {
     all->window.create(sf::VideoMode(1920, 1080), "Black Window SFML");
-    sf::Event event;
     while (all->window.isOpen()) {
         all->window.clear();
-        while (all->window.pollEvent(event)) {
+        while (all->window.pollEvent(all->event)) {
 
             the_event(all);
 
-            if (event.type == sf::Event::Closed)
+            if (all->event.type == sf::Event::Closed)
                 all->window.close();
         }
 

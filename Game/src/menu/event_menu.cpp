@@ -7,14 +7,65 @@
 
 #include "all.h"
 
+void event_menu_scene_3_name(all_t *all)
+{
+    sf::Vector2i pos = sf::Mouse::getPosition(all->window);
+
+    if (pos.x > 786 && pos.x < 1084 && pos.y > 149 && pos.y < 205) {
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            all->menu.name_state = 1;
+    } else 
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            all->menu.name_state = 0;
+
+    if (all->event.type == sf::Event::TextEntered && all->menu.name_state == 1) {
+        if (all->event.text.unicode != '\b')
+            all->menu.name_enter += all->event.text.unicode;
+        if (all->event.text.unicode == '\b' && all->menu.name_enter.size() > 0)
+            all->menu.name_enter.erase(all->menu.name_enter.size() - 1, 2);
+
+        all->menu.name_input.setString(all->menu.name_enter);
+    }
+}
+
+void event_menu_scene_3(all_t *all)
+{
+    event_menu_scene_3_name(all);
+    if (all->menu.f == 1)
+        all->menu.f = 0;
+    if (all->menu.m == 1)
+        all->menu.m = 0;
+    sf::Vector2i pos = sf::Mouse::getPosition(all->window);
+
+    if (pos.x > 743 && pos.x < 814 && pos.y > 429 && pos.y < 492 && all->menu.m != 2) {
+        all->menu.m = 1;
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+            all->menu.m = 2;
+            if (all->menu.f == 2)
+                all->menu.f = 0;
+        }
+    }
+
+    if (pos.x > 1043 && pos.x < 1113 && pos.y > 430 && pos.y < 489 && all->menu.f != 2) {
+        all->menu.f = 1;
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+            all->menu.f = 2;
+            if (all->menu.m == 2)
+                all->menu.m = 0;
+        }
+    }
+}
+
 void event_menu_scene_2(all_t *all)
 {
     sf::Vector2i pos = sf::Mouse::getPosition(all->window);
 
-    if (pos.x > 728 && pos.x < 1042 && pos.y > 853 && pos.y < 930) {
+    if (pos.x > 768 && pos.x < 1082 && pos.y > 853 && pos.y < 930) {
         all->menu.scene_2_new_f.setColor(sf::Color::White);
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-            all->index = 0;
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+            create_save(all);
+            all->index = 2;
+        }
     } else
         all->menu.scene_2_new_f.setColor(sf::Color::Red);
 }
@@ -34,4 +85,5 @@ void event_menu(all_t *all)
 {
     if (all->index == 0) event_menu_scene_1(all);
     if (all->index == 1) event_menu_scene_2(all);
+    if (all->index == 2) event_menu_scene_3(all);
 }
