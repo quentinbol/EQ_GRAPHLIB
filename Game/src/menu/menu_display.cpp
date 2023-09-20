@@ -80,6 +80,7 @@ void menu_scene_2(all_t *all)
     }
     all->window.draw(all->menu.scene_2_b_create);
     all->window.draw(all->menu.scene_2_new_f);
+     all->window.draw(all->menu.scene_3_left);
 }
 
 void menu_scene_1(all_t *all)

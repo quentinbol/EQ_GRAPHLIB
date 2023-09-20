@@ -54,6 +54,7 @@ std::array<std::string, 20> get_player_config(const std::string &path)
 void charge_save(all_t *all)
 {
     int nb = 0;
+    all->menu.save = 1;
     std::array<std::string, 20> buff = get_player_config(".lock/save/save_player.txt");
     std::string let[20];
 
@@ -74,7 +75,7 @@ void charge_save(all_t *all)
 
 void create_save(all_t *all)
 {
-    all->menu.save = 0;
+    all->menu.save = 1;
 
     std::array<std::string, 20> buff;
     buff = get_player_config(".lock/config/config_player.txt");
@@ -86,10 +87,82 @@ void create_save(all_t *all)
     f << copy;
 }
 
+void save(all_t *all)
+{
+    std::ofstream f;
+    std::ofstream i{".lock/save/save_player.txt"};
+    f.open(".lock/save/save_player.txt", std::ofstream::out | std::ofstream::trunc);
+    f.close();
+
+    i << "room:";
+    i << all->playstat.getRoom();
+    i << "\n";
+
+    i << "pos_x:";
+    i << all->playstat.getPos_x();
+    i << "\n";
+
+    i << "pos_y:";
+    i << all->playstat.getPos_y();
+    i << "\n";
+
+    i << "name:" + all->playstat.getName() + "\n";
+
+    if (all->playstat.getSex() == 'm')
+        i << "sex:m\n";
+        else
+            i << "sex:f\n";
+
+    i << "skin:0\n";
+
+    i << "level:";
+    i << all->playstat.getLevel();
+    i << "\n";
+    i << "coins:";
+    i << all->playstat.getCoins();
+    i << "\n";
+    i << "points:";
+    i << all->playstat.getPoints();
+    i << "\n";
+
+    i << "life:";
+    i << all->playstat.getLife();
+    i << "\n";
+    i << "shield:";
+    i << all->playstat.getShield();
+    i << "\n";
+    i << "dps:";
+    i << all->playstat.getDps();
+    i << "\n";
+    i << "move_speed:";
+    i << all->playstat.getSpeed();
+    i << "\n";
+    i << "regen_life:";
+    i << all->playstat.getRegen_Life();
+    i << "\n";
+    i << "regen_spell:";
+    i << all->playstat.getRegen_Spell();
+    i << "\n";
+
+    i << "Pspeed:";
+    i << all->playstat.getPspeed();
+    i << "\n";
+    i << "Pshield:";
+    i << all->playstat.getPshield();
+    i << "\n";
+    i << "Prange:";
+    i << all->playstat.getPrange();
+    i << "\n";
+    i << "Pcac:";
+    i << all->playstat.getPcac();
+    i << "\n";
+    i << "Pspace:";
+    i << all->playstat.getPspace();
+    i << "\n";
+}
+
 void init_player_save(all_t *all)
 {
-    all->menu.save = 1;
-
     int fd = open(".lock/save/save_player.txt", O_WRONLY);
 
     if (fd != -1)

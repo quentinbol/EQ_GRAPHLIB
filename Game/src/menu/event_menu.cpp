@@ -7,6 +7,17 @@
 
 #include "all.h"
 
+void set_stat(all_t *all)
+{
+    char sex;
+    if (all->menu.f == 2)
+        sex = 'f';
+        else
+            sex = 'm';
+    all->index = 0;
+    all->playstat.setPerso(all->menu.name_enter, sex, 0);
+}
+
 void event_menu_scene_4(all_t *all)
 {
     sf::Vector2i pos = sf::Mouse::getPosition(all->window);
@@ -47,10 +58,13 @@ void event_menu_scene_4(all_t *all)
     } else
         all->menu.scene_3_left.setScale({0.3, 0.3});
 
-    if (pos.x > 723 && pos.x < 1124 && pos.y > 290 && pos.y < 389) {
+    if (pos.x > 723 && pos.x < 1124 && pos.y > 290 && pos.y < 389 && all->menu.result == 3) {
         all->menu.begin_f.setColor(sf::Color::White);
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-            all->index = 0;
+            create_save(all); //crée la save à partir des config
+            charge_save(all); //envoie les config dans la save
+            set_stat(all);    //envoie les valeurs donnée lors de la création dans les stats
+            save(all);        //sauvegarde le personnage
             //START
             all->menu.result = 0;
             all->menu.tag_1 = 0;
@@ -61,6 +75,7 @@ void event_menu_scene_4(all_t *all)
             all->menu.m = 0;
             all->menu.f = 0;
             all->menu.name_state = 0;
+            all->menu.name_enter = "";
         }
     } else
         all->menu.begin_f.setColor(sf::Color::Black);
@@ -124,7 +139,8 @@ void event_menu_scene_3(all_t *all)
     } else
         all->menu.scene_3_left.setScale({0.3, 0.3});
 
-    if (pos.x > 1673 && pos.x < 1752 && pos.y > 464 && pos.y < 557) {
+    if (pos.x > 1673 && pos.x < 1752 && pos.y > 464 && pos.y < 557 &&
+        all->menu.f + all->menu.m == 2 && all->menu.name_enter[0] != '\0') {
         all->menu.scene_3_right.setScale({0.4, 0.4});
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
             all->index = 3;
@@ -140,11 +156,17 @@ void event_menu_scene_2(all_t *all)
     if (pos.x > 768 && pos.x < 1082 && pos.y > 853 && pos.y < 930) {
         all->menu.scene_2_new_f.setColor(sf::Color::White);
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-            create_save(all);
             all->index = 2;
         }
     } else
         all->menu.scene_2_new_f.setColor(sf::Color::Red);
+
+    if (pos.x > 88 && pos.x < 171 && pos.y > 459 && pos.y < 559) {
+        all->menu.scene_3_left.setScale({0.4, 0.4});
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            all->index = 0;
+    } else
+        all->menu.scene_3_left.setScale({0.3, 0.3});
 }
 
 void event_menu_scene_1(all_t *all)

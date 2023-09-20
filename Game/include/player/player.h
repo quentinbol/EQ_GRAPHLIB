@@ -71,6 +71,15 @@ public:
         Pspace = pspace_in;
     }
 
+    int getRoom() {
+        return room;
+    }
+    int getPos_x() {
+        return pos_x;
+    }
+    int getPos_y() {
+        return pos_y;
+    }
     std::string& getName() {
         return name;
     }
@@ -91,6 +100,37 @@ public:
     }
     int getLife() {
         return life;
+    }
+    int getDps() {
+        return dps;
+    }
+    int getShield() {
+        return shield;
+    }
+    int getSpeed() {
+        return move_speed;
+    }
+    int getRegen_Life() {
+        return regen_life;
+    }
+    int getRegen_Spell() {
+        return regen_spell;
+    }
+
+    int getPspeed() {
+        return Pspeed;
+    }
+    int getPshield() {
+        return Pshield;
+    }
+    int getPrange() {
+        return Prange;
+    }
+    int getPcac() {
+        return Pcac;
+    }
+    int getPspace() {
+        return Pspace;
     }
 
 
@@ -113,6 +153,7 @@ public:
     struct all_t;
     void init_player_save(all_t *all);
     void create_save(all_t *all);
-    void init_create_new_player(all_t *all);
+    void charge_save(all_t *all);
+    void save(all_t *all);
 
 #endif /* !player_h */

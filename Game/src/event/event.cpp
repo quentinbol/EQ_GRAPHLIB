@@ -7,10 +7,17 @@
 
 #include "all.h"
 
+void my_event(all_t *all)
+{
+    std::cout << "true\n";
+    all->playstat.addCoins(100);
+    save(all);
+}
+
 void prss_event(all_t *all)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))
-        new_player(all);
+        my_event(all);
 }
 
 void the_event(all_t *all)

@@ -10,7 +10,6 @@
 void init_all(all_t *all)
 {
     init_player_save(all);
-    init_create_new_player(all);
     init_menu(all);
 }
 

@@ -136,7 +136,4 @@
     void event_menu(all_t *all);
     void menu_display(all_t *all);
 
-    void new_player(all_t *all);
-
-
 #endif /* !menu _h*/
