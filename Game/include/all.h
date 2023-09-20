@@ -50,4 +50,6 @@
     void the_event(all_t *all);
     void the_display(all_t *all);
 
+    void admin_cmd(all_t *all);
+
 #endif /* !all_h */

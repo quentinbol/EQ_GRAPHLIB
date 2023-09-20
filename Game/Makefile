@@ -15,6 +15,7 @@ SRC += src/menu/menu_display.cpp
 SRC += src/player/init_player_save.cpp
 SRC += src/game_loop/game_loop.cpp
 SRC += src/event/event.cpp
+SRC += src/event/admin_cmd.cpp
 SRC += src/display/display.cpp
 SRC += src/utils/get_mouse_pos.cpp
 SRC += include/lib_graphic/my_get_sprite.cpp
