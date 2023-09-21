@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <time.h>
+#include <ctime>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>

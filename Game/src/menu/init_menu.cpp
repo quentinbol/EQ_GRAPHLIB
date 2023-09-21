@@ -167,8 +167,12 @@ void init_menu(all_t *all)
 {
     all->menu.font.loadFromFile("assets/font.ttf");
 
-    all->menu.menu_back = my_get_sprite(all->menu.menu_back_t, 
-    "assets/menu_background.jpg", {3, 3}, {0, 0});
+    all->menu.menu_back_morning = my_get_sprite(all->menu.menu_back_morning_t, 
+    "assets/wall_2.png", {2.65, 2.33}, {0, 0});
+    all->menu.menu_back_day = my_get_sprite(all->menu.menu_back_day_t, 
+    "assets/wall_1.png", {2.65, 2.33}, {0, 0});
+    all->menu.menu_back_night = my_get_sprite(all->menu.menu_back_night_t, 
+    "assets/wall_3.png", {2.65, 2.33}, {0, 0});
 
     all->menu.b_play = my_get_sprite(all->menu.b_play_t, 
     "assets/b_play.png", {0.6, 0.6}, {50, 380});

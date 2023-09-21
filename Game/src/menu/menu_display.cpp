@@ -85,7 +85,15 @@ void menu_scene_2(all_t *all)
 
 void menu_scene_1(all_t *all)
 {
-    all->window.draw(all->menu.menu_back);
+    if (all->menu.ltm->tm_hour >= 8 && all->menu.ltm->tm_hour < 12)
+        all->window.draw(all->menu.menu_back_morning);
+
+    if (all->menu.ltm->tm_hour < 19 && all->menu.ltm->tm_hour >= 12)
+        all->window.draw(all->menu.menu_back_day);
+
+    if (all->menu.ltm->tm_hour >= 19 || all->menu.ltm->tm_hour < 8)
+        all->window.draw(all->menu.menu_back_night);
+
     all->window.draw(all->menu.b_play);
     all->window.draw(all->menu.b_opt);
     all->window.draw(all->menu.b_play_f);

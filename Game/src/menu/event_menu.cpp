@@ -14,7 +14,7 @@ void set_stat(all_t *all)
         sex = 'f';
         else
             sex = 'm';
-    all->index = 0;
+    all->index = 1;
     all->playstat.setPerso(all->menu.name_enter, sex, 0);
 }
 
@@ -23,11 +23,11 @@ void event_menu_scene_4(all_t *all)
     sf::Vector2i pos = sf::Mouse::getPosition(all->window);
 
     if (pos.x > 191 && pos.x < 373 && pos.y > 549 && pos.y < 719 && all->menu.result < 3)
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && all->menu.tag_2 == 0)
             all->menu.tag_1 = 1;
 
     if (pos.x > 486 && pos.x < 683 && pos.y > 549 && pos.y < 719 && all->menu.result < 3)
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && all->menu.tag_1 == 0)
             all->menu.tag_2 = 1;
 
     if (pos.x > 781 && pos.x < 978 && pos.y > 549 && pos.y < 719 && all->menu.result < 3)

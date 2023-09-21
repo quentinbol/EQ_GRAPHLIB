@@ -14,6 +14,16 @@
         sf::Font font;
         int save;
 
+        time_t actuel;
+        tm *ltm;
+
+        sf::Sprite menu_back_morning;
+        sf::Texture menu_back_morning_t;
+        sf::Sprite menu_back_day;
+        sf::Texture menu_back_day_t;
+        sf::Sprite menu_back_night;
+        sf::Texture menu_back_night_t;
+
         sf::Sprite menu_back;
         sf::Texture menu_back_t;
 
