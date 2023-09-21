@@ -10,58 +10,7 @@
 
     #include <iostream>
 
-    struct menu_t {
-        sf::Font font;
-        int save;
-
-        time_t actuel;
-        tm *ltm;
-
-        sf::Sprite menu_back_morning;
-        sf::Texture menu_back_morning_t;
-        sf::Sprite menu_back_day;
-        sf::Texture menu_back_day_t;
-        sf::Sprite menu_back_night;
-        sf::Texture menu_back_night_t;
-
-        sf::Sprite menu_back;
-        sf::Texture menu_back_t;
-
-        sf::Sprite b_play;
-        sf::Texture b_play_t;
-        sf::Text b_play_f;
-
-        sf::Sprite b_opt;
-        sf::Texture b_opt_t;
-        sf::Text b_opt_f;
-
-
-        sf::Sprite scene_2_back;
-        sf::Texture scene_2_back_t;
-
-        sf::Sprite scene_2_b_charge;
-        sf::Texture scene_2_b_charge_t;
-
-        sf::Sprite scene_2_b_new;
-        sf::Texture scene_2_b_new_t;
-
-        sf::Sprite scene_2_b_title;
-        sf::Texture scene_2_b_title_t;
-
-        sf::Sprite scene_2_b_next;
-        sf::Texture scene_2_b_next_t;
-
-        sf::Sprite scene_2_b_create;
-        sf::Texture scene_2_b_create_t;
-
-        sf::Text scene_2_new_f;
-
-        sf::Text scene_2_name_f;
-        sf::Text scene_2_sex_f;
-        sf::Text scene_2_level_f;
-        sf::Text scene_2_coins_f;
-        sf::Text scene_2_points_f;
-
+    struct crea_t {
         sf::Sprite scene_3_b_title;
         sf::Texture scene_3_b_title_t;
         sf::Text scene_3_name_f;
@@ -138,6 +87,69 @@
         sf::Sprite begreen;
         sf::Texture begreen_t;
         sf::Text begin_f;
+    };
+
+    struct opt_t {
+        sf::Sprite board;
+        sf::Texture board_t;
+    };
+
+    struct menu_t {
+        crea_t creation;
+        opt_t option;
+        sf::Font font;
+        int save;
+
+        time_t actuel;
+        tm *ltm;
+
+        sf::Sprite menu_back_morning;
+        sf::Texture menu_back_morning_t;
+        sf::Sprite menu_back_day;
+        sf::Texture menu_back_day_t;
+        sf::Sprite menu_back_night;
+        sf::Texture menu_back_night_t;
+
+        sf::Sprite menu_back;
+        sf::Texture menu_back_t;
+
+        sf::Sprite b_play;
+        sf::Texture b_play_t;
+        sf::Text b_play_f;
+
+        sf::Sprite b_opt;
+        sf::Texture b_opt_t;
+        sf::Text b_opt_f;
+
+
+        sf::Sprite scene_2_back;
+        sf::Texture scene_2_back_t;
+
+        sf::Sprite scene_2_b_charge;
+        sf::Texture scene_2_b_charge_t;
+
+        sf::Sprite scene_2_b_new;
+        sf::Texture scene_2_b_new_t;
+
+        sf::Sprite scene_2_b_title;
+        sf::Texture scene_2_b_title_t;
+
+        int ng;
+        sf::Sprite scene_2_b_next;
+        sf::Texture scene_2_b_next_t;
+        sf::Sprite scene_2_b_next_g;
+        sf::Texture scene_2_b_next_g_t;
+
+        sf::Sprite scene_2_b_create;
+        sf::Texture scene_2_b_create_t;
+
+        sf::Text scene_2_new_f;
+
+        sf::Text scene_2_name_f;
+        sf::Text scene_2_sex_f;
+        sf::Text scene_2_level_f;
+        sf::Text scene_2_coins_f;
+        sf::Text scene_2_points_f;
     };
 
     struct all_t;

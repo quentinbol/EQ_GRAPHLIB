@@ -13,4 +13,5 @@ void the_game_loop(all_t *all)
     all->menu.ltm = localtime(&all->menu.actuel);
 
     menu_loop(all);
+    player_loop(all);
 }

@@ -7,7 +7,7 @@
 
 #include "all.h"
 
-void loop_scene_2(all_t *all)
+void menu_loop(all_t *all)
 {
     all->menu.scene_2_name_f.setString(all->playstat.getName());
     sf::FloatRect textRect = all->menu.scene_2_name_f.getLocalBounds();
@@ -37,15 +37,10 @@ void loop_scene_2(all_t *all)
     sf::FloatRect textRect3 = all->menu.scene_2_points_f.getLocalBounds();
     all->menu.scene_2_points_f.setOrigin(textRect3.width,textRect3.height);
 
-    all->menu.textRect3 = all->menu.name_input.getLocalBounds();
-    all->menu.name_input.setOrigin(all->menu.textRect3.width/2,all->menu.textRect3.height/2);
-    all->menu.name_input.setString(all->menu.name_enter);
+    all->menu.creation.textRect3 = all->menu.creation.name_input.getLocalBounds();
+    all->menu.creation.name_input.setOrigin(all->menu.creation.textRect3.width/2,all->menu.creation.textRect3.height/2);
+    all->menu.creation.name_input.setString(all->menu.creation.name_enter);
 
-    all->menu.result = all->menu.tag_1 + all->menu.tag_2 + all->menu.tag_3
-    + all->menu.tag_4 + all->menu.tag_5;
-}
-
-void menu_loop(all_t *all)
-{
-    loop_scene_2(all);
+    all->menu.creation.result = all->menu.creation.tag_1 + all->menu.creation.tag_2 + all->menu.creation.tag_3
+    + all->menu.creation.tag_4 + all->menu.creation.tag_5;
 }

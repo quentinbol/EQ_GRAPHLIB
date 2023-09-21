@@ -11,6 +11,7 @@ void init_all(all_t *all)
 {
     init_player_save(all);
     init_menu(all);
+    init_player(all);
 }
 
 void my_game(all_t *all)

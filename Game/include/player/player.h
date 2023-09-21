@@ -146,14 +146,17 @@ public:
 };
 
     struct player_t {
-        sf::Sprite player_create_back;
-        sf::Texture player_create_back_t;
+        sf::Sprite player;
+        sf::Texture player_t;
     };
 
     struct all_t;
+    void init_player(all_t *all);
     void init_player_save(all_t *all);
     void create_save(all_t *all);
     void charge_save(all_t *all);
     void save(all_t *all);
+    void event_player(all_t *all);
+    void player_loop(all_t *all);
 
 #endif /* !player_h */
